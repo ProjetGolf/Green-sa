@@ -3,7 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
     <title>Green'sa</title>
+
+    <script src='angular-google-maps.min.js'></script>
+
+    <script src='lodash.min.js'></script>
 
     <script src="css/style.css"></script>
     
@@ -58,7 +63,7 @@
      
     <script src="js/services.js"></script>
 
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDl9BagDICekDiRBq7HNvGiHzAStLw-8UI&sensor=true"></script>
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     
 
     <!-- Only required for Tab projects w/ pages in multiple tabs 

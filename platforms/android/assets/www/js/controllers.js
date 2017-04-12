@@ -168,20 +168,5 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('MapsCtrl', function($scope, $ionicLoading) {
-			google.maps.event.addDomListener(window, 'load', function() {
 
-			navigator.geolocation.getCurrentPosition(function(pos) {
-			  var latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-
-			  var mapOptions = {
-				center: latLng,
-				zoom: 15,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			  };
-
-			  $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-			});
-		});
-	})
  
