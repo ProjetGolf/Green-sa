@@ -58,10 +58,10 @@ angular.module('app.routes', [])
     controller: 'dinardGolfCtrl'
   })
 
-  .state('golfDeCissBlossac', {
+  .state('golfDeCiceBlossac', {
     url: '/bruz',
-    templateUrl: 'templates/golfDeCissBlossac.html',
-    controller: 'golfDeCissBlossacCtrl'
+    templateUrl: 'templates/golfDeCiceBlossac.html',
+    controller: 'golfDeCiceBlossacCtrl'
   })
 
   .state('golfDuDomaineDesOrmes', {
