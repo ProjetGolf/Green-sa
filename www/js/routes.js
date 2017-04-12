@@ -135,6 +135,24 @@ angular.module('app.routes', [])
     templateUrl: 'templates/paramTres.html',
     controller: 'paramCtrl',
   })
+        
+  .state('tableauDeScore1', {
+    url: '/statistiques2',
+    templateUrl: 'templates/tableauDeScore1.html',
+    controller: 'tableauDeScore1Ctrl'
+    })
+        
+  .state('tableauDeScore2', {
+    url: '/statistiques3',
+    templateUrl: 'templates/tableauDeScore2.html',
+    controller: 'tableauDeScore2Ctrl'
+    })
+        
+  .state('tableauDeScore3', {
+    url: '/statistiques4',
+    templateUrl: 'templates/tableauDeScore3.html',
+    controller: 'tableauDeScore3Ctrl'
+    })
 
 $urlRouterProvider.otherwise('/accueil')
 

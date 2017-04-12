@@ -53,3 +53,9 @@ h3{
     flex: 1;
     flex-direction: column;
 }
+
+th, td, tr {
+    border-collapse: collapse;
+    border :1px solid black;
+    font-size: 11px;
+}
