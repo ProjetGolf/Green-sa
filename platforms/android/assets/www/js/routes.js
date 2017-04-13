@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('accueil', {
+  .state('accueil', {
     url: '/accueil',
     templateUrl: 'templates/accueil.html',
     controller: 'accueilCtrl'
@@ -58,10 +58,10 @@ angular.module('app.routes', [])
     controller: 'dinardGolfCtrl'
   })
 
-  .state('golfDeCissBlossac', {
+  .state('golfDeCiceBlossac', {
     url: '/bruz',
-    templateUrl: 'templates/golfDeCissBlossac.html',
-    controller: 'golfDeCissBlossacCtrl'
+    templateUrl: 'templates/golfDeCiceBlossac.html',
+    controller: 'golfDeCiceBlossacCtrl'
   })
 
   .state('golfDuDomaineDesOrmes', {
@@ -135,6 +135,24 @@ angular.module('app.routes', [])
     templateUrl: 'templates/paramTres.html',
     controller: 'paramCtrl',
   })
+        
+  .state('tableauDeScore1', {
+    url: '/statistiques2',
+    templateUrl: 'templates/tableauDeScore9trou32.html',
+    controller: 'tableauDeScore1Ctrl'
+    })
+        
+  .state('tableauDeScore2', {
+    url: '/statistiques3',
+    templateUrl: 'templates/tableauDeScore9trouC.html',
+    controller: 'tableauDeScore2Ctrl'
+    })
+        
+  .state('tableauDeScore3', {
+    url: '/statistiques4',
+    templateUrl: 'templates/tableauDeScore18trou.html',
+    controller: 'tableauDeScore3Ctrl'
+    })
 
 $urlRouterProvider.otherwise('/accueil')
 
