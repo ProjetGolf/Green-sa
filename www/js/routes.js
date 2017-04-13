@@ -138,21 +138,21 @@ angular.module('app.routes', [])
         
   .state('tableauDeScore1', {
     url: '/statistiques2',
-    templateUrl: 'templates/tableauDeScore9trou32.html',
+    templateUrl: 'templates/tableauDeScore1.html',
     controller: 'tableauDeScore1Ctrl'
     })
         
   .state('tableauDeScore2', {
     url: '/statistiques3',
-    templateUrl: 'templates/tableauDeScore9trouC.html',
+    templateUrl: 'templates/tableauDeScore1.html',
     controller: 'tableauDeScore2Ctrl'
     })
         
   .state('tableauDeScore3', {
     url: '/statistiques4',
-    templateUrl: 'templates/tableauDeScore18trou.html',
+    templateUrl: 'templates/tableauDeScore1.html',
     controller: 'tableauDeScore3Ctrl'
-    })
+    }) 
 
 $urlRouterProvider.otherwise('/accueil')
 
