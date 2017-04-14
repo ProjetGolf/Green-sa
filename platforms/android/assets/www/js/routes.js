@@ -152,7 +152,7 @@ angular.module('app.routes', [])
     url: '/statistiques4',
     templateUrl: 'templates/tableauDeScore18trou.html',
     controller: 'tableauDeScore3Ctrl'
-    })
+    }) 
 
 $urlRouterProvider.otherwise('/accueil')
 
