@@ -72,7 +72,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
 })
 
 
-
 /*
   This directive is used to open regular and dynamic href links inside of inappbrowser.
 */
