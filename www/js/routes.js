@@ -154,6 +154,12 @@ angular.module('app.routes', [])
     controller: 'tableauDeScore3Ctrl'
     }) 
 
+  .state('statistiquesgeneral', {
+    url: '/statistiquesgeneral',
+    templateUrl: 'templates/statistiquesgeneral.html',
+    controller: 'statistiquesgeneralCtrl',
+  })
+
 $urlRouterProvider.otherwise('/accueil')
 
   

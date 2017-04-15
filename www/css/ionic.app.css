@@ -9877,6 +9877,6 @@ h3{
 
 td,th,tr{
     border-collapse: collapse;
-    border :1px solid black;
+    border :3px stable green;
     font-size:11px;
 }
