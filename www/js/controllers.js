@@ -111,7 +111,7 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
+                                    
 
 }])
    
@@ -196,7 +196,10 @@ function ($scope, $stateParams) {
                                     
 }])
 
-.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
+.controller('MapCtrl',
+            
+            
+function($scope, $state, $cordovaGeolocation) {
   var options = {timeout: 10000, enableHighAccuracy: true};
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -214,8 +217,10 @@ function ($scope, $stateParams) {
   }, function(error){
     console.log("Could not get location");
   });
+            
+    
  
-})
+}) 
 
 
  
