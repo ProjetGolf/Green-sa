@@ -196,10 +196,7 @@ function ($scope, $stateParams) {
                                     
 }])
 
-.controller('MapCtrl',
-            
-            
-function($scope, $state, $cordovaGeolocation) {
+.controller('MapCtrl', function($scope, $stateParams, $cordovaGeolocation) {
   var options = {timeout: 10000, enableHighAccuracy: true};
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -207,12 +204,12 @@ function($scope, $state, $cordovaGeolocation) {
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
     var mapOptions = {
-      center: latLng,
+      center: latLng(48,2),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
  
   }, function(error){
     console.log("Could not get location");
@@ -223,4 +220,4 @@ function($scope, $state, $cordovaGeolocation) {
 }) 
 
 
- 
+
