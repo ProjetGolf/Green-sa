@@ -222,5 +222,51 @@ function($scope, $state, $cordovaGeolocation) {
  
 }) 
 
+ 
+ 
+ 
+  
+  .controller('StatistiquesCtrl', function ($scope, $stateParams, $ionicPopup, $state, ShotTableScore) {
+    $scope.$on('$ionicView.enter', function(e) {
+      initForm()
+    })
+ 
+    function initForm(){
+      if($stateParams.id){
+        ShotTableScore.getById($stateParams.id, function(item){
+          $scope.shotForm = item
+        })
+      } else {
+        $scope.shotForm = {}
+      }
+    }
+    function onSaveSuccess(){
+      $state.go('statistiques')
+    }
+    $scope.saveShot = function(id){
+ 
+      if(!$scope.shotForm.id){
+        ShotTableScore.createShot($scope.shotForm).then(onSaveSuccess)
+      } else {
+        ShotTableScore.updateShot($scope.shotForm).then(onSaveSuccess)
+      }
+    }
+ 
+    $scope.confirmDelete = function() {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Supprimer',
+        template: 'êtes vous sûr de vouloir supprimer ?'
+      })
+ 
+      confirmPopup.then(function(res) {
+        if(res) {
+          ShotTableScore.deleteDatabase().then(onSaveSuccess)
+        }
+      })
+    }
+ 
+ 
+  })
+
 
  

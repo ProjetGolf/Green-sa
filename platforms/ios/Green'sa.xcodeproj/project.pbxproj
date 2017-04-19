@@ -21,6 +21,8 @@
 		F64471B28AD9488CA4021F94 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B83BC08004B67BD4BADF0 /* libz.tbd */; };
 		9C220D211EAE422997BA90AF /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9AF7CEBF4D4F3F96AC1F48 /* CDVLocation.m */; };
 		38BEE74614CD45F3A4DC3E14 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A0524B895845298C296C71 /* CoreLocation.framework */; };
+		267CAE2CABFD4695B79F0174 /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B79D6F0C14E1B9AD9A541 /* SQLitePlugin.m */; };
+		5106572B85704CAEA978A4CF /* sqlite3.c in Resources */ = {isa = PBXBuildFile; fileRef = A5E795A2BD1549D2AE37A4B7 /* sqlite3.c */; settings = {COMPILER_FLAGS = "-DSQLITE_THREADSAFE=1 -DSQLITE_DEFAULT_MEMSTATUS=0 -DSQLITE_OMIT_DECLTYPE -DSQLITE_OMIT_DEPRECATED -DSQLITE_OMIT_PROGRESS_CALLBACK -DSQLITE_OMIT_SHARED_CACHE -DSQLITE_TEMP_STORE=2 -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_RTREE -DSQLITE_DEFAULT_PAGE_SIZE=1024 -DSQLITE_DEFAULT_CACHE_SIZE=2000"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		EF9AF7CEBF4D4F3F96AC1F48 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		B3F92B5D84F94E5AB795E7E1 /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		70A0524B895845298C296C71 /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		133B79D6F0C14E1B9AD9A541 /* SQLitePlugin.m */ = {isa = PBXFileReference; name = "SQLitePlugin.m"; path = "cordova-sqlite-storage/SQLitePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		A5E795A2BD1549D2AE37A4B7 /* sqlite3.c */ = {isa = PBXFileReference; name = "sqlite3.c"; path = "cordova-sqlite-storage/sqlite3.c"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AED8AD0A6CC643DB8573C3D8 /* SQLitePlugin.h */ = {isa = PBXFileReference; name = "SQLitePlugin.h"; path = "cordova-sqlite-storage/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		1FCAE0FCA4A34D66B53900B7 /* sqlite3.h */ = {isa = PBXFileReference; name = "sqlite3.h"; path = "cordova-sqlite-storage/sqlite3.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +202,10 @@
 				62E8529110B145F9A6900096 /* IonicKeyboard.h */,
 				EF9AF7CEBF4D4F3F96AC1F48 /* CDVLocation.m */,
 				B3F92B5D84F94E5AB795E7E1 /* CDVLocation.h */,
+				133B79D6F0C14E1B9AD9A541 /* SQLitePlugin.m */,
+				A5E795A2BD1549D2AE37A4B7 /* sqlite3.c */,
+				AED8AD0A6CC643DB8573C3D8 /* SQLitePlugin.h */,
+				1FCAE0FCA4A34D66B53900B7 /* sqlite3.h */,
 			);
 			name = Plugins;
 			path = Green'sa/Plugins;
@@ -317,6 +327,8 @@
 				64DCA4802AD3422D8F13CE59 /* CDVStatusBar.m in Sources */,
 				93D8FA0BAA944A499B8B9B95 /* IonicKeyboard.m in Sources */,
 				9C220D211EAE422997BA90AF /* CDVLocation.m in Sources */,
+				267CAE2CABFD4695B79F0174 /* SQLitePlugin.m in Sources */,
+				5106572B85704CAEA978A4CF /* sqlite3.c in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,7 +85,10 @@ angular.module('app.routes', [])
   .state('statistiques', {
     url: '/statgeneral',
     templateUrl: 'templates/statistiques.html',
-    controller: 'statistiquesCtrl'
+    controller: 'statistiquesCtrl',
+    params: {
+        id: {value: null},
+      },
   })
 
   .state('nouvellePartie2', {
