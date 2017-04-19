@@ -166,6 +166,9 @@ angular.module('app.routes', [])
     templateUrl: 'templates/statistiquesgeneral.html',
     controller: 'statistiquesgeneralCtrl',
   })
+        
+        
+
 
 $urlRouterProvider.otherwise('/accueil')
 
