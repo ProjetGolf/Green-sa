@@ -196,10 +196,7 @@ function ($scope, $stateParams) {
                                     
 }])
 
-.controller('MapCtrl',
-            
-            
-function($scope, $state, $cordovaGeolocation) {
+.controller('MapCtrl', function($scope, $stateParams, $cordovaGeolocation) {
   var options = {timeout: 10000, enableHighAccuracy: true};
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -207,12 +204,12 @@ function($scope, $state, $cordovaGeolocation) {
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
     var mapOptions = {
-      center: latLng,
+      center: latLng(48,2),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
  
   }, function(error){
     console.log("Could not get location");
@@ -222,5 +219,51 @@ function($scope, $state, $cordovaGeolocation) {
  
 }) 
 
-
  
+ 
+ 
+  
+  .controller('StatistiquesCtrl', function ($scope, $stateParams, $ionicPopup, $state, ShotTableScore) {
+    $scope.$on('$ionicView.enter', function(e) {
+      initForm()
+    })
+ 
+    function initForm(){
+      if($stateParams.id){
+        ShotTableScore.getById($stateParams.id, function(item){
+          $scope.shotForm = item
+        })
+      } else {
+        $scope.shotForm = {}
+      }
+    }
+    function onSaveSuccess(){
+      $state.go('statistiques')
+    }
+    $scope.saveShot = function(id){
+ 
+      if(!$scope.shotForm.id){
+        ShotTableScore.createShot($scope.shotForm).then(onSaveSuccess)
+      } else {
+        ShotTableScore.updateShot($scope.shotForm).then(onSaveSuccess)
+      }
+    }
+ 
+    $scope.confirmDelete = function() {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Supprimer',
+        template: 'êtes vous sûr de vouloir supprimer ?'
+      })
+ 
+      confirmPopup.then(function(res) {
+        if(res) {
+          ShotTableScore.deleteDatabase().then(onSaveSuccess)
+        }
+      })
+    }
+ 
+ 
+  })
+
+
+

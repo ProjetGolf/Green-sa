@@ -54,7 +54,7 @@ angular.module('starter.services', ['ngCordova'])
       createShot: function (shot) {
         return $cordovaSQLite.execute(db, 'INSERT INTO SCORE_SHOT (id_course_hole, id_hole, id_course, id_club, coord_LAT_start, coord_LONG_start, coor_LAT_end_theo, coord_LONG_end_theo, coor_LAT_end_reel ,coord_LONG_end_reel, distance, angle, wind, date) VALUES(?, ?)', [shot.id_course_hole, shot.id_hole, shot.id_course, shot.id_club, shot.coord_LAT_start, shot.coord_LONG_start, shot.coor_LAT_end_theo, shot.coord_LONG_end_theo, shot.coor_LAT_end_reel, shot.coord_LONG_end_reel, shot.distance, shot.angle, shot.wind, shot.date])
       },
-      updateNote: function(shot){
+      updateShot: function(shot){
         return $cordovaSQLite.execute(db, 'UPDATE SCORE_SHOT set id_course_hole=?, id_hole=?, id_course=?, id_club=?, coord_LAT_start=?, coord_LONG_start=?, coor_LAT_end_theo=?, coord_LONG_end_theo=?, coor_LAT_end_reel=? ,coord_LONG_end_reel=?, distance=? angle=?, wind=?, date=? where id = ?', [shot.id_course_hole, shot.id_hole, shot.id_course, shot.id_club, shot.coord_LAT_start, shot.coord_LONG_start, shot.coor_LAT_end_theo, shot.coord_LONG_end_theo, shot.coor_LAT_end_reel, shot.coord_LONG_end_reel, shot.distance, shot.angle, shot.wind, shot.date, shot.id])
       },
       getAll: function(callback){
