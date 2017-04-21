@@ -9827,13 +9827,13 @@ a.button {
 .parent {
     vertical-align: center;
     position: relative;
-    transform: translateY(55%);
+    transform: translateY(30%);
 
 }
 .parent2 {
     vertical-align: center;
     position: relative;
-    transform: translateY(75%);
+    transform: translateY(50%);
 
 }
 
