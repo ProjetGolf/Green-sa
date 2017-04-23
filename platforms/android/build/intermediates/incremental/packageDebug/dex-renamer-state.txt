@@ -1,0 +1,4 @@
+#Fri Apr 21 23:20:56 CEST 2017
+base.0=/Users/projetgolf/Desktop/dPO/Green'sa v2/Green-sa/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/projetgolf/Desktop/dPO/Green'sa v2/Green-sa/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
