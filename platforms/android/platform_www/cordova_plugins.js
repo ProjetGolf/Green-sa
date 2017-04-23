@@ -1,50 +1,32 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
-        "pluginId": "cordova-plugin-device",
+        "id": "cordova-plugin-device.device",
         "clobbers": [
             "device"
         ]
     },
     {
-        "id": "cordova-plugin-splashscreen.SplashScreen",
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "pluginId": "cordova-plugin-splashscreen",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
         "clobbers": [
             "navigator.splashscreen"
         ]
     },
     {
-        "id": "cordova-plugin-statusbar.statusbar",
         "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "pluginId": "cordova-plugin-statusbar",
+        "id": "cordova-plugin-statusbar.statusbar",
         "clobbers": [
             "window.StatusBar"
         ]
     },
     {
-        "id": "ionic-plugin-keyboard.keyboard",
         "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-        "pluginId": "ionic-plugin-keyboard",
+        "id": "ionic-plugin-keyboard.keyboard",
         "clobbers": [
             "cordova.plugins.Keyboard"
         ],
-        "runs": true
-    },
-    {
-        "id": "cordova-plugin-geolocation.geolocation",
-        "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-        "pluginId": "cordova-plugin-geolocation",
-        "clobbers": [
-            "navigator.geolocation"
-        ]
-    },
-    {
-        "id": "cordova-plugin-geolocation.PositionError",
-        "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-        "pluginId": "cordova-plugin-geolocation",
         "runs": true
     }
 ];
@@ -56,9 +38,7 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.2",
     "cordova-plugin-statusbar": "2.2.2",
     "cordova-plugin-whitelist": "1.3.2",
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-geolocation": "2.4.2"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });
