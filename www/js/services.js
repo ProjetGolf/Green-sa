@@ -1,14 +1,6 @@
+
+
 angular.module('app.services', [])
-
-.factory('BlankFactory', [function(){
-
-}])
-
-.service('BlankService', [function(){
-
-}]);
-
-angular.module('starter.services', ['ngCordova'])
   .factory('ShotTableScore', function ($cordovaSQLite, $ionicPlatform) {
     var db, dbName = "ShotTableScore.db"
  

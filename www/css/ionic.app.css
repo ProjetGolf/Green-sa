@@ -9815,9 +9815,7 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.scroll {
-  height: 100%;
-}
+
 
 #map {
   height: 500px;

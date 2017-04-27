@@ -1,9 +1,15 @@
+angular.module('app.geolocation', [])
+
 function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          zoom: 15
         });
-        var infoWindow = new google.maps.InfoWindow({map: map});
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        var beachMarker = new google.maps.Marker({
+          map: map,
+          icon: image
+        });
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -13,21 +19,20 @@ function initMap() {
               lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            beachMarker.setPosition(pos);
             map.setCenter(pos);
           }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, beachMarker, map.getCenter());
           });
         } else {
           // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+          handleLocationError(false, beachMarker, map.getCenter());
         }
       }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
+function handleLocationError(browserHasGeolocation, beachMarker, pos) {
+        beachMarker.setPosition(pos);
+        beachMarker.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
