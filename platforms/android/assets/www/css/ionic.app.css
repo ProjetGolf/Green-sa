@@ -9815,13 +9815,15 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.scroll {
-  height: 100%;
-}
+
 
 #map {
-  height: 100px;
+    height:420px;
+    width:600px;
 }
+
+
+
 
 .parent {
     vertical-align: center;

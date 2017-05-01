@@ -5,9 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services', 'app.geolocation',])
+angular.module('app', [ 'ionic','app.geolocation', 'app.controllers', 'app.routes', 'app.directives','app.services', ])
 
-angular.module('starter', ['ionic', 'ngCordova'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   
@@ -85,7 +84,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
     }
   };
 })
-
 
 
 

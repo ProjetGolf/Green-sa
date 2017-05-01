@@ -59,3 +59,7 @@ th, td, tr {
     border :1px solid black;
     font-size: 11px;
 }
+
+#map {
+    height : 500px;
+}

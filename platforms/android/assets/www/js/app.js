@@ -5,9 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+angular.module('app', [ 'ionic','app.geolocation', 'app.controllers', 'app.routes', 'app.directives','app.services', ])
 
-angular.module('starter', ['ionic', 'ngCordova'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   
@@ -58,19 +57,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
     };
 }])
 
-.config(function($stateProvider, $urlRouterProvider) {
- 
-  $stateProvider
-  .state('map', {
-    url: '/',
-    templateUrl: 'templates/nouvellePartie2.html',
-    controller: 'MapCtrl'
-  });
- 
-  $urlRouterProvider.otherwise("/");
- 
-})
-
 
 /*
   This directive is used to open regular and dynamic href links inside of inappbrowser.
@@ -98,7 +84,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
     }
   };
 })
-
 
 
 

@@ -9815,14 +9815,23 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.scroll {
+
+
+#nouvellePartie2 {
   height: 100%;
+  width: 100%;
 }
 
-#map {
-  width: 100%;
+#nouvellePartie3 {
   height: 100%;
+  width: 100%;
 }
+
+#nouvellePartie4 {
+  height: 100%;
+  width: 100%;
+}
+
 
 .parent {
     vertical-align: center;
