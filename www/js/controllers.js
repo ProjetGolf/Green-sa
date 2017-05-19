@@ -120,8 +120,8 @@ function($scope, $stateParams, $cordovaGeolocation) {
  
     var mapOptions = {
       center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -155,11 +155,20 @@ function($scope, $stateParams, $cordovaGeolocation) {
  
     var mapOptions = {
       center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+ 
+      var marker = new google.maps.Marker({
+        map: $scope.map,
+        animation: google.maps.Animation.DROP,
+        position: latLng
+      });
+    });
  
   }, function(error){
     console.log("Could not get location");
@@ -180,11 +189,20 @@ function($scope, $stateParams, $cordovaGeolocation) {
  
     var mapOptions = {
       center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+ 
+      var marker = new google.maps.Marker({
+        map: $scope.map,
+        animation: google.maps.Animation.DROP,
+        position: latLng
+      });
+    });
  
   }, function(error){
     console.log("Could not get location");
