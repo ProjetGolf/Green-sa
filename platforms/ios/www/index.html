@@ -7,13 +7,12 @@
 
     <link rel="manifest" href="manifest.json">
 
-    <script src='lodash.min.js'></script>
-
     
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -53,16 +52,14 @@
     <script src="js/routes.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
-    <script src="js/geolocation.js"></script>
 
 
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
-    <script src="cordova.js"></script>
     
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl9BagDICekDiRBq7HNvGiHzAStLw-8UI&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl9BagDICekDiRBq7HNvGiHzAStLw-8UI">
     </script>
   </head>
   <body ng-app="app" animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">

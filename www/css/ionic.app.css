@@ -9817,9 +9817,13 @@ a.button {
 
 
 
+.scroll {
+    height: 100%;
+}
+ 
 #map {
-    height:100%;
-    width:100%;
+    width: 100%;
+    height: 85%;
 }
 
 
