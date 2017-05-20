@@ -156,16 +156,69 @@ angular.module('app.routes', [])
     templateUrl: 'templates/tableauDeScore18trou.html',
     controller: 'tableauDeScore3Ctrl'
     })
-        
-
- 
-        
+           
 
   .state('statistiquesgeneral', {
     url: '/statistiquesgeneral',
     templateUrl: 'templates/statistiquesgeneral.html',
     controller: 'statistiquesgeneralCtrl',
   })
+
+  .state('Trou1', {
+    url: '/trou1',
+    templateUrl: 'templates/Trou1.html',
+    controller: 'Trou1Ctrl',
+  })
+
+  .state('Trou2', {
+    url: '/trou2',
+    templateUrl: 'templates/Trou2.html',
+    controller: 'Trou2Ctrl',
+  })
+
+  .state('Trou3', {
+    url: '/trou3',
+    templateUrl: 'templates/Trou3.html',
+    controller: 'Trou3Ctrl',
+  })
+
+  .state('Trou4', {
+    url: '/trou4',
+    templateUrl: 'templates/Trou4.html',
+    controller: 'Trou4Ctrl',
+  })
+
+  .state('Trou5', {
+    url: '/trou5',
+    templateUrl: 'templates/Trou5.html',
+    controller: 'Trou5Ctrl',
+  })
+
+  .state('Trou6', {
+    url: '/trou6',
+    templateUrl: 'templates/Trou6.html',
+    controller: 'Trou6Ctrl',
+  })
+
+  .state('Trou7', {
+    url: '/trou7',
+    templateUrl: 'templates/Trou7.html',
+    controller: 'Trou7Ctrl',
+  })
+
+  .state('Trou8', {
+    url: '/trou8',
+    templateUrl: 'templates/Trou8.html',
+    controller: 'Trou8Ctrl',
+  })
+
+  .state('Trou9', {
+    url: '/trou9',
+    templateUrl: 'templates/Trou9.html',
+    controller: 'Trou9Ctrl',
+  })
+
+
         
         
 

@@ -94,6 +94,7 @@ angular.module('app.routes', [])
   .state('nouvellePartie2', {
     url: '/9Trous32',
     templateUrl: 'templates/nouvellePartie2.html',
+    abstract: true,
     controller: 'nouvellePartie2Ctrl'
   })
 
@@ -156,16 +157,105 @@ angular.module('app.routes', [])
     templateUrl: 'templates/tableauDeScore18trou.html',
     controller: 'tableauDeScore3Ctrl'
     })
-        
-
- 
-        
+           
 
   .state('statistiquesgeneral', {
     url: '/statistiquesgeneral',
     templateUrl: 'templates/statistiquesgeneral.html',
     controller: 'statistiquesgeneralCtrl',
   })
+
+  .state('NouvellePartie2.Trou1', {
+    url: '/trou1',
+    views : {
+      'Trou1': {
+        templateUrl: 'templates/Trou1.html',
+        controller: 'Trou1Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou2', {
+    url: '/trou2',
+    views: {
+      'Trou2': {
+        templateUrl: 'templates/Trou2.html',
+        controller: 'Trou2Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou3', {
+    url: '/trou3',
+    views: {
+      'Trou3':{
+        templateUrl: 'templates/Trou3.html',
+        controller: 'Trou3Ctrl'
+      }   
+    } 
+  })
+
+  .state('NouvellePartie2.Trou4', {
+    url: '/trou4',
+    views: {
+      'Trou4': {
+        templateUrl: 'templates/Trou4.html',
+        controller: 'Trou4Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou5', {
+    url: '/trou5',
+    views: {
+      'Trou5':{
+        templateUrl: 'templates/Trou5.html',
+        controller: 'Trou5Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou6', {
+    url: '/trou6',
+    views: {
+      'Trou6': {
+        templateUrl: 'templates/Trou6.html',
+        controller: 'Trou6Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou7', {
+    url: '/trou7',
+    views: {
+      'Trou7': {
+        templateUrl: 'templates/Trou7.html',
+        controller: 'Trou7Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou8', {
+    url: '/trou8',
+    views: {
+      'Trou8': {
+        templateUrl: 'templates/Trou8.html',
+        controller: 'Trou8Ctrl'
+      }
+    }
+  })
+
+  .state('NouvellePartie2.Trou9', {
+    url: '/trou9',
+    views: {
+      'Trou9': {
+        templateUrl: 'templates/Trou9.html',
+        controller: 'Trou9Ctrl'
+      }
+    }
+  })
+
+
         
         
 
