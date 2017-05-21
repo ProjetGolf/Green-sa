@@ -113,14 +113,28 @@ function ($scope, $stateParams) {
 function($scope, $stateParams, $cordovaGeolocation) {
 
    var options = {timeout: 10000, enableHighAccuracy: true};
+
+   var posTrou1 = {lat : 48.070325, lng : -1.746956};
+   var posTrou2 = {lat : 48.06957, lng : -1.744317};
+   var posTrou3 = {lat : 48.068987, lng : -1.74351};
+   var posTrou4 = {lat : 48.071311, lng : -1.74638};
+   var posTrou5 = {lat : 48.071182, lng : -1.747844};
+   var posTrou6 = {lat : 48.069631, lng : -1.748327};
+   var posTrou7 = {lat : 48.072125, lng : -1.748555};
+   var posTrou8 = {lat : 48.07246, lng : -1.749323};
+   var posTrou9 = {lat : 48.068859, lng : -1.749293};
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
  
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+    console.log(posTrou1);
+
+    //var distance = google.maps.geometry.spherical.computeDistanceBetween(posTrou1, latLng);
  
     var mapOptions = {
       center: latLng,
-      zoom: 17,
+      zoom: 16,
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
@@ -133,6 +147,26 @@ function($scope, $stateParams, $cordovaGeolocation) {
         animation: google.maps.Animation.DROP,
         position: latLng
       });
+
+      var marker = new google.maps.Marker({
+        map: $scope.map,
+        animation: google.maps.Animation.DROP,
+        position: posTrou1
+      });
+
+      var optionsPolylineDistance = {
+          map: $scope.map,
+          path:[posTrou1, latLng],
+          geodesic:true
+        };
+
+      var polylineDistance = new google.maps.Polyline( optionsPolylineDistance );
+      console.log($scope.item);
+
+      $scope.increment = function(item){
+        item.count+= 1;
+        console.log($scope.item);
+      }
     }); 
  
   }, function(error){
