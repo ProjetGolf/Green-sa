@@ -1,11 +1,12 @@
-<ion-view title="Nouvelle Partie" id="page13"  ng-init="item=0">
+<ion-view title="Nouvelle Partie" id="page13">
   <ion-nav-buttons side="right" class="has-header">
     <button class="button button-positive icon ion-android-options" ui-sref="parameters"></button>
   </ion-nav-buttons>
     <ion-content>
       <div id="map" data-tap-disabled="true"></div>
     </ion-content>
-    <button class="bar bar-footer bar-balanced" ng-click="increment(item);">
-  		<div class="title">Enregistrer Position</div>
-	</button>
+    <div class="bar bar-footer bar-balanced">
+  		<button class="button button-balanced ">Enregistrer </button>
+      <button class="button button-dark"  ng-click="increment();">Trou suivant</button>
+	 </div>
 </ion-view>

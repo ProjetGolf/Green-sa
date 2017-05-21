@@ -123,50 +123,66 @@ function($scope, $stateParams, $cordovaGeolocation) {
    var posTrou7 = {lat : 48.072125, lng : -1.748555};
    var posTrou8 = {lat : 48.07246, lng : -1.749323};
    var posTrou9 = {lat : 48.068859, lng : -1.749293};
+   var item=1;
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
  
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-    console.log(posTrou1);
 
-    //var distance = google.maps.geometry.spherical.computeDistanceBetween(posTrou1, latLng);
+    var text="posTrou"+item.toString();
+
+    var pos = eval(text);
+
+    //var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, latLng);
  
     var mapOptions = {
       center: latLng,
-      zoom: 16,
+      zoom: 18,
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
     google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+
+      var text="posTrou"+item.toString();
+
+      var pos = eval(text);
  
-      var marker = new google.maps.Marker({
+      var marker1 = new google.maps.Marker({
         map: $scope.map,
         animation: google.maps.Animation.DROP,
         position: latLng
       });
 
-      var marker = new google.maps.Marker({
+      var marker2 = new google.maps.Marker({
         map: $scope.map,
         animation: google.maps.Animation.DROP,
-        position: posTrou1
+        position: pos
       });
 
       var optionsPolylineDistance = {
           map: $scope.map,
-          path:[posTrou1, latLng],
+          path:[pos, latLng],
           geodesic:true
         };
 
       var polylineDistance = new google.maps.Polyline( optionsPolylineDistance );
-      console.log($scope.item);
 
-      $scope.increment = function(item){
-        item.count+= 1;
-        console.log($scope.item);
+      $scope.increment = function(){
+        item=item+ 1;
+        if (item==9){item=1;}
+
+        var text="posTrou"+item.toString();
+
+        var pos = eval(text);
+
+        marker2.setPosition(pos);
+        polylineDistance.setPath([pos, latLng]);
       }
+
     }); 
  
   }, function(error){
@@ -189,7 +205,7 @@ function($scope, $stateParams, $cordovaGeolocation) {
  
     var mapOptions = {
       center: latLng,
-      zoom: 17,
+      zoom: 18,
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
@@ -223,7 +239,7 @@ function($scope, $stateParams, $cordovaGeolocation) {
  
     var mapOptions = {
       center: latLng,
-      zoom: 17,
+      zoom: 18,
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };
  
