@@ -5,7 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
+var db;
+
 angular.module('app', [ 'ionic','ngCordova', 'app.controllers', 'app.routes', 'app.directives','app.services', ])
+
 
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
@@ -15,10 +19,13 @@ angular.module('app', [ 'ionic','ngCordova', 'app.controllers', 'app.routes', 'a
 
 })
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+    db = $cordovaSQLite.openDB({name:"nextflow.db", location:'default'});
+    $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS SCORE_SHOT (id integer primary key,id_course_hole, id_hole, id_course, id_club, coord_LAT_start, coord_LONG_start, coor_LAT_end_theo, coord_LONG_end_theo, coor_LAT_end_reel ,coord_LONG_end_reel, distance, angle, wind, date)');
+
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -83,4 +90,5 @@ angular.module('app', [ 'ionic','ngCordova', 'app.controllers', 'app.routes', 'a
       });
     }
   };
+
 })

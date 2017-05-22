@@ -444,45 +444,39 @@ function ($scope, $stateParams) {
  
  
   
-.controller('StatistiquesCtrl', function ($scope, $stateParams, $ionicPopup, $state, ShotTableScore) {
-    $scope.$on('$ionicView.enter', function(e) {
-      initForm()
-    })
- 
-    function initForm(){
-      if($stateParams.id){
-        ShotTableScore.getById($stateParams.id, function(item){
-          $scope.shotForm = item
-        })
-      } else {
-        $scope.shotForm = {}
-      }
+.controller('StatistiquesCtrl', function ($scope, $stateParams) {
+
+  $scope.save = function(newShot) {
+
+        // execute INSERT statement with parameter
+        $cordovaSQLite.execute(db, 'INSERT INTO shot_score (shot) VALUES (?)', [newShot])
+            .then(function(result) {
+                $scope.statusMessage = "Shot saved successful, cheers!";
+            }, function(error) {
+                $scope.statusMessage = "Error on saving: " + error.shot;
+            })
+
     }
-    function onSaveSuccess(){
-      $state.go('statistiques')
+
+    $scope.load = function() {
+
+        // Execute SELECT statement to load message from database.
+        $cordovaSQLite.execute(db, 'SELECT * FROM shot_score ORDER BY id DESC')
+            .then(
+                function(res) {
+
+                    if (res.rows.length > 0) {
+
+                        $scope.newShot = res.rows.item(0).shot;
+                        $scope.statusShot = "Shot loaded successful, cheers!";
+                    }
+                },
+                function(error) {
+                    $scope.statusShot = "Error on loading: " + error.shot;
+                }
+            );
     }
-    $scope.saveShot = function(id){
- 
-      if(!$scope.shotForm.id){
-        ShotTableScore.createShot($scope.shotForm).then(onSaveSuccess)
-      } else {
-        ShotTableScore.updateShot($scope.shotForm).then(onSaveSuccess)
-      }
-    }
- 
-    $scope.confirmDelete = function() {
-      var confirmPopup = $ionicPopup.confirm({
-        title: 'Supprimer',
-        template: 'êtes vous sûr de vouloir supprimer ?'
-      })
- 
-      confirmPopup.then(function(res) {
-        if(res) {
-          ShotTableScore.deleteDatabase().then(onSaveSuccess)
-        }
-      })
-    }
- 
+    
  
   })
 
