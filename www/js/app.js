@@ -84,10 +84,3 @@ angular.module('app', [ 'ionic','ngCordova', 'app.controllers', 'app.routes', 'a
     }
   };
 })
-
-
-
-
-
-
-

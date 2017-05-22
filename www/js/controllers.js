@@ -160,13 +160,15 @@ function($scope, $stateParams, $cordovaGeolocation) {
       var marker2 = new google.maps.Marker({
         map: $scope.map,
         animation: google.maps.Animation.DROP,
-        position: pos
+        position: pos,
+        draggable: true
       });
 
       var optionsPolylineDistance = {
           map: $scope.map,
-          path:[pos, latLng],
-          geodesic:true
+          path:[marker2.getPosition(), latLng],
+          geodesic:true,
+          draggable: true
         };
 
       var polylineDistance = new google.maps.Polyline( optionsPolylineDistance );
@@ -245,13 +247,15 @@ function($scope, $stateParams, $cordovaGeolocation) {
       var marker2 = new google.maps.Marker({
         map: $scope.map,
         animation: google.maps.Animation.DROP,
-        position: pos
+        position: pos,
+        draggable: true
       });
 
       var optionsPolylineDistance = {
           map: $scope.map,
           path:[pos, latLng],
-          geodesic:true
+          geodesic:true,
+          draggable: true
         };
 
       var polylineDistance = new google.maps.Polyline( optionsPolylineDistance );
@@ -338,13 +342,15 @@ function($scope, $stateParams, $cordovaGeolocation) {
       var marker2 = new google.maps.Marker({
         map: $scope.map,
         animation: google.maps.Animation.DROP,
-        position: pos
+        position: pos,
+        draggable: true
       });
 
       var optionsPolylineDistance = {
           map: $scope.map,
           path:[pos, latLng],
-          geodesic:true
+          geodesic:true,
+          draggable: true
         };
 
       var polylineDistance = new google.maps.Polyline( optionsPolylineDistance );
