@@ -470,6 +470,7 @@ function ($scope, $stateParams) {
                         $scope.newShot = res.rows.item(0).shot;
                         $scope.statusShot = "Shot loaded successful, cheers!";
                     }
+                    console.log(bonjour);
                 },
                 function(error) {
                     $scope.statusShot = "Error on loading: " + error.shot;

@@ -23,7 +23,16 @@ angular.module('app', [ 'ionic','ngCordova', 'app.controllers', 'app.routes', 'a
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    db = $cordovaSQLite.openDB({name:"nextflow.db", location:'default'});
+    if (window.cordova) {
+    //device
+        db = $cordovaSQLite.openDB({name:"nextflow.db", location:'default'});
+        
+    }else{
+    // browser
+        db = window.openDatabase("nextflow.db", '1', 'my', 1024 * 1024 * 100);
+    }
+
+    //db = $cordovaSQLite.openDB({name:"nextflow.db", location:'default'});
     $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS SCORE_SHOT (id integer primary key,id_course_hole, id_hole, id_course, id_club, coord_LAT_start, coord_LONG_start, coor_LAT_end_theo, coord_LONG_end_theo, coor_LAT_end_reel ,coord_LONG_end_reel, distance, angle, wind, date)');
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
