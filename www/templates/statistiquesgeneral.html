@@ -1,5 +1,23 @@
 <ion-view title="Statistiques" style="font-family:Verdana; font-weight: bold; font-size: 25px" id="page18">
   
-  <ion-content padding="true" style="background: url(img/xiJRr2H4T7KdvNRY9ggz_golfball.png) no-repeat center;background-size:cover;" class="has-header">
+  <ion-content padding="true" style="background: url(img/xiJRr2H4T7KdvNRY9ggz_golfball.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="statistiquesgeneralCtrl">
+
+    <div class="card">
+        <div class="item item-divider">
+            A line chart
+        </div>
+        <div class="item item-text-wrap">
+            <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" options="{showTooltips: false}"></canvas>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item item-divider">
+            A bar chart
+        </div>
+        <div class="item item-text-wrap">
+            <canvas id="bar" class="chart chart-bar" data="data" labels="labels" legend="true" series="series" options="{showTooltips: false}"></canvas>
+        </div>
+    </div>
+  	
   </ion-content>
 </ion-view>

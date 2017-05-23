@@ -437,6 +437,13 @@ function ($scope, $stateParams) {
 .controller('statistiquesgeneralCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller                // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) { 
+
+  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+    $scope.series = ['Series A', 'Series B'];
+    $scope.data = [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ];
                                     
 }])
 
@@ -480,6 +487,7 @@ function ($scope, $stateParams) {
     
  
   })
+
 
 
 

@@ -8,7 +8,8 @@
 
 var db;
 
-angular.module('app', [ 'ionic','ngCordova', 'app.controllers', 'app.routes', 'app.directives','app.services', ])
+angular.module('app', ['ionic','chart.js','ngCordova','app.controllers', 'app.routes', 'app.directives','app.services', ])
+
 
 
 
