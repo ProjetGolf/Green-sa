@@ -4,10 +4,13 @@
 
     <div class="card">
         <div class="item item-divider">
-            A line chart
+            A bar-line chart
         </div>
         <div class="item item-text-wrap">
-            <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" options="{showTooltips: false}"></canvas>
+            <canvas id="base" class="chart-bar"
+                chart-data="data" chart-labels="labels" chart-colors="colors"
+                chart-dataset-override="datasetOverride" >
+            </canvas> 
         </div>
     </div>
     <div class="card">
