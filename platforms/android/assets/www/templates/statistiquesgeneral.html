@@ -1,5 +1,53 @@
 <ion-view title="Statistiques" style="font-family:Verdana; font-weight: bold; font-size: 25px" id="page18">
   
-  <ion-content padding="true" style="background: url(img/xiJRr2H4T7KdvNRY9ggz_golfball.png) no-repeat center;background-size:cover;" class="has-header">
+  <ion-content padding="true" style="background: url(img/xiJRr2H4T7KdvNRY9ggz_golfball.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="statistiquesgeneralCtrl">
+
+    <div class="card">
+        <div class="item item-divider">
+            A bar-line chart
+        </div>
+        <div class="item item-text-wrap">
+            <canvas id="base" class="chart-bar"
+                chart-data="data" chart-labels="labels" chart-colors="colors"
+                chart-dataset-override="datasetOverride" >
+            </canvas> 
+        </div>
+    </div>
+    <div class="card">
+        <div class="item item-divider">
+            15
+        </div>
+        <div class="item item-text-wrap">
+            Nombre de tirs enrgistrés
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item item-divider">
+            27-05-2017
+        </div>
+        <div class="item item-text-wrap">
+            Date du dernier tir
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item item-divider">
+            25° Tendance à droite
+        </div>
+        <div class="item item-text-wrap">
+            Angle de déviation moyen
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item item-divider">
+            205,3m
+        </div>
+        <div class="item item-text-wrap">
+            Plus longue distance enregistrée
+        </div>
+    </div>
+  	
   </ion-content>
 </ion-view>
