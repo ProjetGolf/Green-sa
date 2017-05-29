@@ -185,6 +185,16 @@ function($scope, $stateParams, $cordovaGeolocation) {
         polylineDistance.setPath([pos, latLng]);
       }
 
+      $scope.save = function() {
+
+        // execute INSERT statement with parameter
+        $cordovaSQLite.execute(db, 'INSERT INTO shot_score (shot) VALUES (?)', [newShot])
+            .then(function(result) {
+                $scope.statusMessage = "Shot saved successful, cheers!";
+            }, function(error) {
+                $scope.statusMessage = "Error on saving: " + error.shot;
+            })
+      }
     }); 
  
   }, function(error){
@@ -199,7 +209,7 @@ function($scope, $stateParams, $cordovaGeolocation) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function($scope, $stateParams, $cordovaGeolocation) {
   
-     var options = {timeout: 10000, enableHighAccuracy: true};
+   var options = {timeout: 10000, enableHighAccuracy: true};
 
    var posTrou1 = {lat : 48.070325 , lng : -1.746956};
    var posTrou2 = {lat : 48.06957, lng : -1.744317};
@@ -211,6 +221,8 @@ function($scope, $stateParams, $cordovaGeolocation) {
    var posTrou8 = {lat : 48.07246, lng : -1.749323};
    var posTrou9 = {lat : 48.068859, lng : -1.749293};
    var item=1;
+
+   var newShot;
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
  
@@ -270,6 +282,17 @@ function($scope, $stateParams, $cordovaGeolocation) {
 
         marker2.setPosition(pos);
         polylineDistance.setPath([pos, latLng]);
+      }
+
+      $scope.save = function() {
+
+        // execute INSERT statement with parameter
+        $cordovaSQLite.execute(db, 'INSERT INTO shot_score (shot) VALUES (?)', [newShot])
+            .then(function(result) {
+                $scope.statusMessage = "Shot saved successful, cheers!";
+            }, function(error) {
+                $scope.statusMessage = "Error on saving: " + error.shot;
+            })
       }
 
     }); 
@@ -365,6 +388,17 @@ function($scope, $stateParams, $cordovaGeolocation) {
 
         marker2.setPosition(pos);
         polylineDistance.setPath([pos, latLng]);
+      }
+
+      $scope.save = function() {
+
+        // execute INSERT statement with parameter
+        $cordovaSQLite.execute(db, 'INSERT INTO shot_score (shot) VALUES (?)', [newShot])
+            .then(function(result) {
+                $scope.statusMessage = "Shot saved successful, cheers!";
+            }, function(error) {
+                $scope.statusMessage = "Error on saving: " + error.shot;
+            })
       }
 
     }); 
@@ -502,6 +536,101 @@ function ($scope, $stateParams) {
     
  
   })
+
+.controller('angleDeDeviation1Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+  $scope.labels =["Parfait", "Trop à droite", "", "", "", "", "Trop à gauche"];
+
+  $scope.data = [
+    [132, 59, 10, 0, 0, 10, 80],
+  
+  ];
+
+
+}])
+
+.controller('angleDeDeviation2Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+   $scope.labels =["Parfait", "Trop à droite", "", "", "", "", "Trop à gauche"];
+
+  $scope.data = [
+    [112, 59, 12, 0, 0, 13, 40],
+  
+  ];
+
+
+}])
+
+.controller('angleDeDeviation3Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+   $scope.labels =["Parfait", "Trop à droite", "", "", "", "", "Trop à gauche"];
+
+  $scope.data = [
+    [112, 52, 13, 0, 0, 19, 82],
+  
+  ];
+
+
+}])
+
+.controller('distance1Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+  $scope.labels = ['Driver', 'Bois 3', 'Bois 5', 'Fer 5', 'Fer 7', 'Fer 9', 'Putter'];
+  $scope.series = ['Distance moyenne','Distance Max'];
+
+  $scope.data = [
+    [213, 187, 173, 143, 124, 103, 6],
+    [263, 230, 208, 167, 146, 127, 13]
+
+  ];
+
+
+}])
+
+.controller('distance2Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+  $scope.labels = ['Driver', 'Bois 3', 'Bois 5', 'Fer 5', 'Fer 7', 'Fer 9', 'Putter'];
+  $scope.series = ['Distance moyenne','Distance Max'];
+
+  $scope.data = [
+    [213, 187, 173, 143, 124, 103, 6],
+    [263, 230, 208, 167, 146, 127, 13]
+
+  ];
+
+}])
+
+.controller('distance3Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+  $scope.labels = ['Driver', 'Bois 3', 'Bois 5', 'Fer 5', 'Fer 7', 'Fer 9', 'Putter'];
+  $scope.series = ['Distance moyenne','Distance Max'];
+
+  $scope.data = [
+    [213, 187, 173, 143, 124, 103, 6],
+    [263, 230, 208, 167, 146, 127, 13]
+
+  ];
+
+
+}])
 
 
 

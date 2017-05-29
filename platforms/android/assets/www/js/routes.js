@@ -166,6 +166,42 @@ angular.module('app.routes', [])
     templateUrl: 'templates/statistiquesgeneral.html',
     controller: 'statistiquesgeneralCtrl',
   })
+
+  .state('angleDeDeviation1', {
+    url: '/statistiques2',
+    templateUrl: 'templates/angleDeDeviation1.html',
+    controller: 'angleDeDeviation1Ctrl'
+  })
+
+  .state('angleDeDeviation2', {
+    url: '/statistiques3',
+    templateUrl: 'templates/angleDeDeviation2.html',
+    controller: 'angleDeDeviation2Ctrl'
+  })
+
+  .state('angleDeDeviation3', {
+    url: '/statistiques4',
+    templateUrl: 'templates/angleDeDeviation3.html',
+    controller: 'angleDeDeviation3Ctrl'
+  })
+
+  .state('distance1', {
+    url: '/statistiques2',
+    templateUrl: 'templates/distance1.html',
+    controller: 'distance1Ctrl'
+  })
+
+  .state('distance2', {
+    url: '/statistiques3',
+    templateUrl: 'templates/distance2.html',
+    controller: 'distance2Ctrl'
+  })
+
+  .state('distance3', {
+    url: '/statistiques4',
+    templateUrl: 'templates/distance3.html',
+    controller: 'distance3Ctrl'
+  })
         
         
 
